@@ -9,13 +9,15 @@ function Hero({}: Props) {
 		<div
 			className="hero min-h-screen"
 			style={{
-				backgroundImage: "url(default.jpg)",
+				backgroundImage: "url(bg-default.jpg)",
 			}}
 		>
-			<div className="hero-overlay bg-opacity-60"></div>
-			<div className="hero-content text-center text-neutral-content">
-				<div className="max-w-md">
-					<h1 className="mb-5 text-5xl font-bold">Get your chunk now </h1>
+			<div className="hero-overlay bg-opacity-20"></div>
+			<div className="hero-content text-center text-primary-content">
+				<div className="max-w-md bg-gradient-conic from-black/90 to-secondary rounded-full size-fit p-20 bg-opacity-20">
+					<h1 className="mb-5 text-5xl font-bold tracking-tighter uppercase">
+						Get your chunk now{" "}
+					</h1>
 					<p className="mb-5">
 						{`Don't want to go all in but still want to get in on the action?`}
 					</p>

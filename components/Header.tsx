@@ -1,9 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { connectKeplrWallet } from "../lib/connectWallet";
-import ConnectButton from "./ConnectWallet";
 import ConnectWallet from "./ConnectWallet";
 
 const Header = () => {
@@ -44,7 +41,7 @@ const Header = () => {
 							alt="logo"
 							className="w-[40px] md:w-[50px] drop-shadow-lg"
 						/> */}
-							<p className="md:text-3xl text-xl font-extrabold font-heading1 text-primary-content ">
+							<p className="md:text-3xl text-xl font-extrabold font-heading1 text-primary-content uppercase">
 								Deauth
 							</p>
 						</div>
@@ -54,6 +51,12 @@ const Header = () => {
 				<div className="  flex items-center gap-2   ">
 					{/* {Button } */}
 					<ConnectWallet />
+					<Link
+						href={"/list-nft"}
+						className="btn btn-sm btn-primary rounded-full bordered border-base-100"
+					>
+						List Your NFT
+					</Link>
 				</div>
 			</div>
 		</div>

@@ -25,8 +25,8 @@ function Page({}: Props) {
 	};
 
 	return (
-		<div className="md:grid grid-cols-4 gap-5 p-5 pt-10">
-			<div className="col-span-3 max-h-screen overflow-y-hidden rounded-xl items-center flex flex-col ">
+		<div className="md:grid grid-cols-4 gap-5 p-5 pt-20 min-h-screen">
+			<div className="col-span-3 lg:h-[800px] md:h-[700px] h-screen min-h-96 overflow-y-hidden rounded-xl items-center flex flex-col bg-primary  ">
 				<div className="text-2xl text-center uppercase tracking-tighter font-bold">
 					{NFT_name}
 				</div>
@@ -34,8 +34,12 @@ function Page({}: Props) {
 			</div>
 
 			{/* right side menu  */}
-			<div className="cop-span-1 flex flex-col ">
-				<div className="flex flex-col gap-5 items-center text-center">
+			<div className="cop-span-1 flex flex-col gap-5">
+				<div className="flex flex-col gap-1 items-center text-center bg-white/20 rounded-md p-3">
+					<div className="text-primary-content/40">description</div>
+					<div className="text-sm ">{description}</div>
+				</div>
+				<div className="flex flex-col gap-5 items-center text-center bg-white/20 rounded-md p-3">
 					<label className="label">
 						fractions available for buying : {100 - fraction_already_bought}
 					</label>
@@ -46,7 +50,7 @@ function Page({}: Props) {
 					></progress>
 				</div>
 
-				<label className="form-control w-full max-w-xs  mt-10">
+				<label className="form-control w-full  bg-white/20 rounded-md p-3">
 					<div className="label ">
 						<span className="label-text-alt text-primary-content">
 							Fractions you want to buy

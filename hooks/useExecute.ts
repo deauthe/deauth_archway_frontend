@@ -5,21 +5,18 @@ import { Coin, MsgData, StdFee } from "@archwayhq/arch3.js";
 import { useRecoilValue } from "recoil";
 import { archwayStore } from "@/state/atoms";
 
-export default function useExecuteContract(address: string) {
-	const client = useClient();
-	const archwayStoreState = useRecoilValue(archwayStore);
-	const accounts = archwayStoreState.accounts;
+export default function useExecuteContract(address: string, msg: any) {
+	const store = useRecoilValue(archwayStore);
 
 	const execute = useCallback(
 		async (
-			account = accounts[0].address,
-			msg: MsgData,
-			fee: StdFee | "auto" | number,
+			account = store.accounts[0].address,
+			fee = "auto" as "auto",
 			memo = "execute starter template",
 			funds?: Coin[]
 		) => {
-			if (!client) return;
-			const result = await client.execute(
+			if (!store.client) return;
+			const result = await store.client.execute(
 				account,
 				address,
 				msg,
@@ -29,7 +26,7 @@ export default function useExecuteContract(address: string) {
 			);
 			return result;
 		},
-		[client, address, accounts]
+		[store, address, msg]
 	);
 	return execute;
 }

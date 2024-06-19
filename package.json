@@ -13,12 +13,16 @@
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
     "@keplr-wallet/types": "^0.12.103",
+    "@types/uuid": "^9.0.8",
     "base64-js": "^1.5.1",
     "dotenv": "^16.4.5",
+    "ipfs-http-client": "^60.0.1",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
-    "recoil": "^0.7.7"
+    "react-hook-form": "^7.52.0",
+    "recoil": "^0.7.7",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
