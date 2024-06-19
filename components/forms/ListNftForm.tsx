@@ -1,13 +1,9 @@
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
-import React, { useEffect, useState } from "react";
-import { ListItemProps } from "@chakra-ui/react";
-import { NFT_metadata } from "@/helpers/staticRandomNfts";
-import { create as ipfsHttpClient } from "ipfs-http-client";
-// const client = ipfsHttpClient('https://uniqo.infura-ipfs.io')
+import React, { useState } from "react";
+// import { create as ipfsHttpClient } from "ipfs-http-client";
 const projectId = "2ONjCGu7UlrPOzmZ3hqy8WlN2GC";
 const projectSecretKey = "43cc6a424bd74fd70d8a175972fbba87";
-import { useRouter } from "next/navigation";
 
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecretKey}`).toString(
 	"base64"
@@ -17,14 +13,14 @@ console.log(auth);
 const subdomain = "https://uniqo-marketplace.infura-ipfs.io";
 
 console.log(subdomain);
-const client = ipfsHttpClient({
-	host: "infura-ipfs.io",
-	port: 5001,
-	protocol: "https",
-	headers: {
-		authorization: auth,
-	},
-});
+// const client = ipfsHttpClient({
+// 	host: "infura-ipfs.io",
+// 	port: 5001,
+// 	protocol: "https",
+// 	headers: {
+// 		authorization: auth,
+// 	},
+// });
 
 type Props = {};
 
@@ -55,11 +51,11 @@ function ListNftForm({}: Props) {
 		const file = getValues("image");
 		if (typeof file !== "undefined") {
 			try {
-				const result = await client.add(file);
-				console.log("this is result", result);
-				setValue("imageLink", `${subdomain}/ipfs/${result.path}`);
-				console.log("image", getValues("image"));
-				console.log(`${subdomain}/ipfs/${result.path}`);
+				// const result = await client.add(file);
+				// console.log("this is result", result);
+				// setValue("imageLink", `${subdomain}/ipfs/${result.path}`);
+				// console.log("image", getValues("image"));
+				// console.log(`${subdomain}/ipfs/${result.path}`);
 			} catch (error) {
 				console.log("ipfs image upload error: ", error);
 			}
